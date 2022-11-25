@@ -1,0 +1,43 @@
+{
+  "name": "warranty-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/evgendeveloper/warranty-service.git",
+  "author": "Evgen Vlasov <evgendeveloper@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "webpack serve --config webpack/config.development.js",
+    "build": "webpack --config webpack/config.production.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@vue/component-compiler-utils": "^3.2.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^5.3.1",
+    "node-sass": "^5.0.0",
+    "sass": "^1.32.4",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "svelte-loader": "^3.0.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^5.15.0",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "lodash": "^4.17.20",
+    "svelte": "^3.35.0",
+    "v-mask": "^2.2.4",
+    "vue": "^2.6.12",
+    "vue-force-next-tick": "^1.1.0",
+    "vuex": "^3.6.2"
+  }
+}

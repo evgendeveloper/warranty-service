@@ -1,0 +1,66 @@
+@import "../_functions.sass";
+@import "colors";
+
+$font-size-base: 16 !default;
+$font-size-root: $font-size-base * 1px !default;
+$font-size-btn: 14 / $font-size-base * 1rem !default;
+$font-size-text-body-1: 14 / $font-size-base * 1rem !default;
+$font-size-text-body-2: 12 / $font-size-base * 1rem !default;
+
+$font-size-controls: $font-size-text-body-2 !default;
+$font-size-tabs: $font-size-text-body-1 !default;
+
+$font-family-root: 'Roboto', sans-serif !default;
+$font-color-root: $color-black !default;
+
+$sm-border-radius: 3px;
+$md-border-radius: 4px;
+$lg-border-radius: 6px;
+
+/* === Input Fields === */
+$height-input-fields: 36px !default;
+$border-radius-input-fields: $sm-border-radius !default;
+
+$bg-color-input-fields: white;
+
+
+/* === Buttons === */
+$font-size-btn: 15px !default;
+$bg-color-primary-btn: $color-primary !default;
+$border-radius-btn: $sm-border-radius !default;
+
+
+$font-size-input-fields: $font-size-root !default;
+$color-input-fields: $color-primary !default;
+$border-color-input-fields: $color-primary !default;
+
+$bg-color-btn:        $color-primary !default;
+$bg-color-accent-btn: $color-accent !default;
+
+
+$bg-color-input: rgba(0, 139, 210, .1) !default;
+$border-color-input: $color-primary !default;
+
+$color-link: $color-primary !default;
+
+$max-width-container: 1560px !default;
+$spacer: 2px !default;
+
+$spacers: () !default;
+@if (type-of($spacers) == list) {
+  @for $i from 0 through 20 {
+    $spacers: map-merge($spacers, ($i: $spacer * $i))
+  }
+}
+
+$grid-breakpoints: () !default;
+$grid-breakpoints: map-deep-merge(
+  (
+    'xs': 0,
+    'sm': 600px,
+    'md': 960px,
+    'lg': 1280px - 16px,
+    'xl': 1920px - 16px
+  ),
+  $grid-breakpoints
+);

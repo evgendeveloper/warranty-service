@@ -1,0 +1,73 @@
+.c-input-number {
+  position: relative;
+  align-items: center;
+  height: 45px;
+  display: flex;
+  border-radius: $border-radius-input-fields;
+  border: 1px solid $color-light-grey;
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance:textfield;
+  }
+  input {
+    padding: 0;
+    text-align: center;
+    border: none;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    color: $color-black;
+
+    &:focus,
+    &:active {
+      outline: none;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    font-weight: 500;
+    font-size: 20px;
+    height: 100%;
+    cursor: pointer;
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__down {
+    padding-left: 24px;
+    padding-right: 15px;
+  }
+  &__up {
+    padding-left: 15px;
+    padding-right: 24px;
+  }
+  &__buffer {
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  &__measure {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    height: 100%;
+    margin-left: 4px;
+  }
+}

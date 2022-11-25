@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DEMO CLIENT SITE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script>
+    (function(c,r,m,f,d,e,v){c[d]=c[d]||{},e=r.createElement(m),v=r.getElementsByTagName(m)[0],e.async=1,e.src=f,v.parentNode.insertBefore(e,v)})
+    (window,document,'script','/c4d-warranty-SDK.js','C4DWarranty');
+    C4DWarranty.config = {
+      host: 'https://crm.gk-tis.ru',
+      baseUrl: '/api/hs/extint/api',
+      widget: {
+        enabled: true,
+        button: {
+          enabled: true,
+          caption: 'гарантия',
+          size: 80,
+          fontSize: 8,
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      padding: 3rem 0;
+    }
+    .section--secondary {
+      background-color: #939597;
+    }
+    .section--primary {
+      background-color: #F5DF4D;
+    }
+    .section > *:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    .btn--primary {
+      background-color: #F5DF4D;
+    }
+    .btn--secondary {
+      background-color: #939597;
+      color: black;
+    }
+    .text--primary {
+      color: #F5DF4D;
+    }
+    .btn--black {
+      background-color: black;
+      color: #F5DF4D;
+    }
+    .text--secondary {
+      color: #939597;
+    }
+    .text--dark {
+      color: #0d1117;
+    }
+    .section--black {
+      background-color: #000;
+    }
+    .section--dark {
+      background-color: #0d1117;
+    }
+    .section--dark-lighten {
+      background-color: #161b22;
+    }
+  </style>
+</head>
+<body class="section--dark-lighten">
+  <div class="container">
+    <section class="section">
+      <div class="text--secondary">
+        <h4>Getting started</h4>
+        <div class="mt-2">This is your widget snippet.<br>Copy-paste it into the code of the pages you want to chat on.<br>Right before the &lt;/head> tag is the best option.</div>
+        <pre class="mt-4 text--primary">
+          &lt;script>
+            (function(c,r,m,f,d,e,v){c[d]=c[d]||{},e=r.createElement(m),v=r.getElementsByTagName(m)[0],e.async=1,e.src=f,v.parentNode.insertBefore(e,v)})
+            (window,document,'script','https://warranty-service.netlify.app/c4d-warranty-SDK.js','C4DWarranty');
+            C4DWarranty.config = {
+              host: 'https://crm.gk-tis.ru', <span class="text--secondary">// URL to connect API</span>
+              baseUrl: '/api/hs/extint/api',
+              widget: {
+                enabled: true,
+                button: {
+                  enabled: true,
+                  caption: 'гарантия',
+                  size: 80,
+                  fontSize: 8,
+                }
+              }
+            }
+          &lt;/script>
+        </pre>
+      </div>
+
+      <div class="text--secondary">
+        Inject by HTML attribute:
+        <pre class="mt-2">&lt;div <span class="text--primary">c4d-warranty</span>>&lt;/div></pre>
+      </div>
+      <div c4d-warranty style="max-width: 560px;" class="mx-auto"></div>
+      
+      <div class="text--secondary mt-4">
+        Handler for the href attribute of the link:
+        <pre class="text--primary mt-2">href="c4dWarranty"</pre>
+      </div>
+      <a href="c4dWarranty" class="btn btn--secondary">(HTML attribute) Show Widget</a>
+  
+      <div class="mt-5">
+        <div class="text--secondary">
+          JS API method call:
+          <pre class="text--primary mt-2">C4DWarranty.showWidget()</pre>
+        </div>
+        <button class="btn btn--primary mt-3" id="pwaless-show" onclick="C4DWarranty.showWidget()">(API JS) Show Widget</button>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

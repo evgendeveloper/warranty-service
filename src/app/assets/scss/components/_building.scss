@@ -1,0 +1,207 @@
+.c-building {
+  $self: &;
+
+  &__vertical-label {
+    color: #999;
+    text-transform: uppercase;
+  }
+
+  table {
+    border-collapse: collapse;
+
+    thead, tfoot {
+      color: #999;
+
+      td {
+        padding: 5px 10px;
+      }
+    }
+    td {
+      padding: 0 10px;
+
+      &:first-child, &:nth-child(2) {
+        padding-left: 0;
+      }
+    }
+    tbody {
+      tr {
+        background-color: transparent;
+        transition: background-color .225s ease-in-out;
+        &:hover {
+          background-color: rgba($color-light-grey, .45);
+        }
+      }
+    }
+  }
+  &__floor-number {
+    color: #999;
+  }
+  &__section {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 -4px;
+  }
+  &__flat {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 4px;
+    color: $color-black;
+
+    &>#{$self}__flat-type {
+      display: none;
+    }
+
+    &.is-active {
+      #{$self}__flat-inner {
+        box-shadow: 0 0 0 2px $color-primary;
+      }
+    }
+
+    &.is-reserved {
+      #{$self}__flat-inner {
+        opacity: .45;
+      }
+    }
+  }
+  &__flat-inner {
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 0 6px 2px rgba(0,0,0,.05);
+    width: 160px;
+
+    &>.d-flex.align-center {
+      flex-wrap: nowrap;
+      white-space: nowrap;
+
+      .ml-2.has-opacity-65 {
+        overflow: hidden;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        margin-right: 2px;
+      }
+    }
+  }
+  &__flat-type {
+    border-radius: 3px;
+    padding: 0 3px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    //width: 20px;
+    //height: 20px;
+  }
+
+  &.is-simple {
+    #{$self} {
+      &__flat {
+        position: relative;
+        transform: scale3d(1,1,1);
+        transition: all .225s ease-in-out;
+        will-change: transform;
+
+        &>#{$self}__flat-type {
+          display: flex;
+          border-radius: 0;
+          width: 28px;
+          height: 28px;
+          align-items: center;
+          justify-content: center;
+          opacity: 1;
+          transition: opacity .225s ease-in-out;
+          will-change: opacity;
+
+          &:hover {
+            opacity: .65;
+          }
+        }
+
+        &.is-active {
+          box-shadow: 0 0 0 2px white, 0 0 0 4px $color-primary;
+        }
+
+        @media screen and (min-width: 1264px) {
+          &:hover {
+            z-index: 1;
+
+            #{$self}__flat-inner {
+              opacity: 1;
+              visibility: visible;
+              pointer-events: initial;
+              transform: translate3d(-50%, -6px, 0);
+              transition: all .225s ease-in-out;
+              will-change: opacity, transfrom;
+            }
+          }
+        }
+      }
+      &__section {
+        margin: 0 -4px;
+      }
+      &__flat-inner {
+        bottom: 100%;
+        left: 50%;
+        transform: translate3d(-50%, 10px, 0);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+      }
+    }
+
+    table {
+      tr {
+        &:first-child {
+          td {
+            #{$self}__flat {
+              #{$self}__flat-inner {
+                bottom: auto;
+                top: 100%;
+              }
+              &:hover {
+                #{$self}__flat-inner {
+                  transform: translate3d(-50%, 6px, 0);
+                }
+              }
+            }
+          }
+        }
+      }
+      td {
+        &:nth-child(2) {
+          #{$self}__flat:first-child {
+            &:hover {
+              #{$self}__flat-inner {
+                left: 0;
+                transform: translate3d(0, -10px, 0);
+              }
+            }
+            #{$self}__flat-inner {
+              left: 0;
+              transform: translate3d(0, 10px, 0);
+            }
+          }
+        }
+        &:last-child {
+          #{$self}__flat:last-child {
+            &:hover {
+              #{$self}__flat-inner {
+                left: auto;
+                right: 0;
+                transform: translate3d(0, -10px, 0);
+              }
+            }
+            #{$self}__flat-inner {
+              left: auto;
+              right: 0;
+              transform: translate3d(0, 10px, 0);
+            }
+          }
+        }
+      }
+    }
+  }
+}

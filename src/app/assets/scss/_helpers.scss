@@ -1,0 +1,240 @@
+.has-text-primary {
+  color: $color-primary !important;
+}
+.has-text-purple {
+  color: $color-purple !important;
+}
+.has-text-blue {
+  color: $color-blue !important;
+}
+.has-text-green {
+  color: $color-green !important;
+}
+.has-text-white {
+  color: white !important;
+}
+.has-text-black {
+  color: $color-black !important;
+}
+.has-text-grey {
+  color: $color-grey !important;
+}
+.has-opacity-65 {
+  opacity: .65;
+}
+.has-opacity-45 {
+  opacity: .45;
+}
+.has-text-red {
+  color: $color-red !important;
+}
+.has-background-primary {
+  background-color: $color-primary !important;
+}
+.has-background-light-grey {
+  background-color: $color-primary-light; //rgba($color-primary, .15) !important;
+}
+.has-background-white {
+  background-color: white !important;
+}
+.has-background-black {
+  background-color: black !important;
+}
+
+.has-opacity-1 {
+  opacity: 1;
+}
+
+.full-height {
+  height: 100%;
+}
+.full-width {
+  width: 100% !important;
+}
+.full-page {
+  height: 100vh;
+}
+.pos-rel {
+  position: relative;
+}
+.pos-a {
+  position: absolute;
+}
+.pos-t {
+  top: 0;
+}
+.pos-b {
+  bottom: 0;
+}
+.pos-l {
+  left: 0;
+}
+.pos-r {
+  right: 0;
+}
+.pos-y-50 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.z-1 {
+  z-index: 1;
+}
+
+
+/* === Typography === */
+.text-h1, h1 {
+  font-weight: 800;
+  font-size: 2em; // 25px
+  line-height: 125%;
+
+  @include create-mq($grid__bp-sm, 'min') {
+    font-size: 3em; // 48px
+  }
+}
+.text-h2, h2 {
+  font-weight: 700;
+  font-size: 1.7em; // 24px
+  line-height: 110%;
+
+  @include create-mq($grid__bp-sm, 'min') {
+    font-size: 2em; // 44px
+  }
+  @include create-mq($grid__bp-md, 'min') {
+    font-size: 2.25em; // 44px
+  }
+  @include create-mq($grid__bp-lg, 'min') {
+    font-size: 2.5em; // 44px
+  }
+}
+.text-h3, h3 {
+  font-weight: 700;
+  font-size: 1.285em; // 18px
+  line-height: 100%;
+
+  @include create-mq($grid__bp-sm, 'min') {
+    font-size: 1.5em; // 24px
+  }
+}
+.text-subtitle-1 {
+  font-weight: 600;
+  font-size: 1.2em; // 18px
+  line-height: 140%;
+
+  @include create-mq($grid__bp-sm, 'min') {
+    font-size: 1.25em; // 20px
+  }
+}
+.text-subtitle-2 {
+  font-weight: 600;
+  font-size: 1.15em; // 16px
+  line-height: 140%;
+
+  @include create-mq($grid__bp-sm, 'min') {
+    font-size: 1.125em; // 18px
+    line-height: 150%;
+  }
+}
+
+.text-body-1 {
+  font-size: $font-size-text-body-1;
+  line-height: normal;
+}
+.text-body-2 {
+  font-size: $font-size-text-body-2;
+  line-height: normal;
+}
+.text-title-1 {
+  font-weight: 800;
+  font-size: 2em;
+  line-height: 100%;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-x-auto {
+  overflow-x: auto;
+}
+.text-no-wrap {
+  white-space: nowrap;
+}
+.text-truncate {
+  overflow: hidden;
+  white-space: normal;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+.text-no-underline {
+  text-decoration-line: none;
+}
+.text-underline {
+  text-decoration-line: underline;
+}
+
+.font-weight-800,
+.font-weight-extra-bold {
+  font-weight: 800;
+}
+.font-weight-700,
+.font-weight-bold {
+  font-weight: 700;
+}
+.font-weight-600,
+.font-weight-semi-bold {
+  font-weight: 600;
+}
+.font-weight-500,
+.font-weight-medium {
+  font-weight: 500;
+}
+.font-weight-400,
+.font-weight-regular {
+  font-weight: 400;
+}
+.font-weight-300,
+.font-weight-thin {
+  font-weight: 300;
+}
+
+.rounded-a-3 {
+  border-radius: 3px;
+}
+.rounded-a-5 {
+  border-radius: 5px;
+}
+.rounded-a-10 {
+  border-radius: 10px;
+}
+.rounded-a-120 {
+  border-radius: 120px;
+}
+.is-circle {
+  border-radius: 50%;
+
+  &.is-120x120 {
+    height: 60px;
+    width: 60px;
+
+    @include create-mq($grid__bp-sm, 'min') {
+      height: 120px;
+      width: 120px;
+    }
+  }
+}
+
+.width-labels {
+  width: 100px !important;
+}
+.tt-uppersace {
+  text-transform: uppercase;
+}
+

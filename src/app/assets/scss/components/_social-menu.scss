@@ -1,0 +1,15 @@
+.c-social-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    opacity: 1;
+    transition: opacity .225s ease-in-out;
+    will-change: opacity;
+
+    &:hover {
+      opacity: .65;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.c-footer {
+  padding: 46px 0;
+
+  @include create-mq($grid__bp-sm, 'min') {
+    padding: 96px 0;
+  }
+
+  a {
+    color: #fff;
+    opacity: 1;
+    will-change: opacity;
+    transition: opacity .225s ease-in-out;
+
+    &:hover {
+      opacity: .65;
+    }
+  }
+
+  .c-social-menu {
+    margin-top: 30px;
+  }
+
+  &__menu {
+    font-size: 1.125em;
+
+    li:not(:last-child) {
+      margin-bottom: $spacer * 4;
+    }
+  }
+  &__logo {
+    display: flex;
+    justify-content: center;
+
+    svg {
+      max-width: 260px;
+      width: 100%;
+
+      @include create-mq($grid__bp-sm, 'min') {
+        max-width: 360px;
+      }
+    }
+  }
+}

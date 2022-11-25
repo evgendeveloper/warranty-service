@@ -1,0 +1,45 @@
+.c-tab {
+  $self: &;
+  padding: 5px 10px;
+  font-size: $font-size-tabs;
+  color: $color-primary;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.is-active {
+    font-weight: bold;
+    background-image: linear-gradient(transparent calc(100% - 2px), $color-primary calc(100% - 2px));
+  }
+
+  &-items {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(transparent calc(100% - 1px), $color-light-grey calc(100% - 1px));
+
+    &.is-links {
+      background-image: none;
+
+      #{$self} {
+        padding: 0;
+        color: $color-black;
+
+        &.is-active {
+          font-weight: normal;
+          background-image: none;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &-pane {
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
+}

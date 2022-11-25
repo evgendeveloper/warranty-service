@@ -1,0 +1,26 @@
+.c-aside {
+  width: 340px;
+  background-color: #F8FAFC;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  box-shadow: -2px 0 11px -6px rgb(74 123 172 / 50%);
+  transform: translateX(100%);
+  transition: .225s all ease-in-out;
+  will-change: opacity, transform;
+  opacity: 0;
+  flex-shrink: 0;
+
+  &.is-open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  &.is-opened {
+    position: relative;
+  }
+
+  .c-tab-panes.overflow-x-auto {
+    overflow-y: scroll;
+  }
+}

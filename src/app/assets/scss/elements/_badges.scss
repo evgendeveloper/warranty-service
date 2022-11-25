@@ -1,0 +1,56 @@
+.e-badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &>.e-badge {
+    margin-bottom: 10px;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+.e-badge {
+  font-size: $font-size-controls;
+  min-width: 105px;
+  padding: 8px 15px;
+  border-radius: 6px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity .225s ease-in-out;
+  will-change: opacity;
+  color: $color-black;
+  white-space: nowrap;
+
+  &:hover {
+    opacity: .6;
+  }
+
+  &.is-bordered {
+    box-shadow: inset 0 0 0 1px $color-primary;
+  }
+  &.is-reservation {
+    background-color: $color-reservation;
+  }
+  &.is-partial {
+    background-color: $color-partial;
+  }
+  &.is-full {
+    background-color: $color-full;
+  }
+  &.is-free {
+    background-color: $color-free;
+  }
+  &.is-disabled {
+    color: $color-grey;
+    background-color: $color-disabled;
+  }
+
+  &.is-active {
+    box-shadow: 0 0 0 1px $color-primary;
+  }
+}

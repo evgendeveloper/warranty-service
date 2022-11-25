@@ -1,0 +1,33 @@
+.e-input-field {
+  border-radius: $border-radius-input-fields;
+  border: 1px solid $color-light-grey;
+  padding: 0 8px;
+  color: $color-black;
+  font-size: $font-size-text-body-1;
+
+  &::placeholder {
+    color: $color-grey;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba($color-primary, .15);
+  }
+
+  &.is-search {
+    border-radius: 20px;
+    background-color: lighten($color-light-grey, 5);
+    border: none;
+    padding: 0 20px 0 40px;
+  }
+}
+textarea {
+  &.e-input-field {
+    max-width: 100%;
+    padding: 8px;
+  }
+}
+input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]), select {
+  &.e-input-field {
+    height: $height-input-fields;
+  }
+}

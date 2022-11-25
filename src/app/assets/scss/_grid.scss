@@ -1,0 +1,120 @@
+$gutters: 20px;
+$grid__bp-sm: 600;
+$grid__bp-md: 960;
+$grid__bp-lg: 1264;
+$grid__bp-xl: 1904;
+$grid__cols: 12;
+
+$map-grid-props: (
+  '': 0,
+  '-sm': $grid__bp-sm,
+  '-md': $grid__bp-md,
+  '-lg': $grid__bp-lg,
+  '-xl': $grid__bp-xl
+);
+
+@mixin create-mq($breakpoint, $min-or-max) {
+  @if($breakpoint == 0) {
+    @content;
+  } @else {
+    @media screen and (#{$min-or-max}-width: $breakpoint *1px) {
+      @content;
+    }
+  }
+}
+
+@mixin create-col-classes($modifier, $grid-cols, $breakpoint) {
+  @include create-mq($breakpoint, 'min') {
+    .l-col#{$modifier}-offset-0 {
+      margin-left: 0;
+    }
+    @for $i from 1 through $grid-cols {
+      .l-col#{$modifier}-#{$i} {
+        flex-basis: (100 / ($grid-cols / $i) ) * 1%;
+        max-width: (100 / ($grid-cols / $i) ) * 1%;
+        padding: $gutters/2 - 5;
+
+        @include create-mq($grid__bp-sm, 'min') {
+          padding: $gutters/2;
+        }
+      }
+      .l-col#{$modifier}-offset-#{$i} {
+        margin-left: (100 / ($grid-cols / $i) ) * 1%;
+        padding: $gutters/2 - 5;
+
+        @include create-mq($grid__bp-sm, 'min') {
+          padding: $gutters/2;
+        }
+      }
+    }
+  }
+}
+
+@each $modifier , $breakpoint in $map-grid-props {
+  @if($modifier == '') {
+    $modifier: '-xs';
+  }
+  @include create-mq($breakpoint - 1, 'max') {
+    .hidden#{$modifier}-down {
+      display: none !important;
+    }
+  }
+  @include create-mq($breakpoint, 'min') {
+    .hidden#{$modifier}-up {
+      display: none !important;
+    }
+    .flex#{$modifier}-row-reverse {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.l-container {
+  width: 100%;
+  max-width: $max-width-container;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 $gutters/2;
+}
+
+.l-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  margin-right: -$gutters/2 + 5;
+  margin-left: -$gutters/2 + 5;
+
+  @include create-mq($grid__bp-sm, 'min') {
+    margin-right: -$gutters/2;
+    margin-left: -$gutters/2;
+  }
+
+}
+
+.l-col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  width: 100%;
+  padding: $gutters/2 - 5;
+
+  @include create-mq($grid__bp-sm, 'min') {
+    padding: $gutters/2;
+  }
+
+  &-auto {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+    padding: $gutters/2 - 5;
+
+    @include create-mq($grid__bp-sm, 'min') {
+      padding: $gutters/2;
+    }
+  }
+}
+
+@each $modifier , $breakpoint in $map-grid-props {
+  @include create-col-classes($modifier, $grid__cols, $breakpoint);
+}
+

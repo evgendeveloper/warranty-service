@@ -1,0 +1,58 @@
+.e-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  &:active, &:focus {
+    outline: none;
+  }
+
+  &-svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+
+    svg {
+      width: 1em;
+    }
+  }
+
+  &.is-doc {
+    width: 14px;
+    height: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.556 0A1.55 1.55 0 000 1.556v10.888A1.55 1.55 0 001.556 14h10.888A1.55 1.55 0 0014 12.444V1.556A1.55 1.55 0 0012.444 0H1.556zm0 1.556h10.888v10.888H1.556V1.556zM3.11 3.11v1.556h7.778V3.11H3.11zm0 3.111v1.556h7.778V6.222H3.11zm0 3.111v1.556h5.445V9.333H3.11z' fill='%235A7F98'/%3E%3C/svg%3E");
+  }
+  &.is-doc-cancel {
+    width: 15px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.556 0A1.55 1.55 0 000 1.556v10.888A1.55 1.55 0 001.556 14H9v-1.556H1.556V1.556h10.888V9H14V1.556A1.55 1.55 0 0012.444 0H1.556zM3.11 3.111v1.556h7.778V3.11H3.11zm0 3.111v1.556h7.778V6.222H3.11zm0 3.111v1.556h5.445V9.333H3.11zm11.839 2.07l-1.1-1.1-1.375 1.375-1.375-1.375-1.1 1.1 1.375 1.375L10 14.153l1.1 1.1 1.375-1.375 1.375 1.375 1.1-1.1-1.375-1.375 1.375-1.375z' fill='%235A7F98'/%3E%3C/svg%3E");
+  }
+  &.is-call {
+    width: 10px;
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.667 5h1.11A2.778 2.778 0 005 2.222v1.111A1.667 1.667 0 016.667 5zm2.222 0H10c0-2.778-2.239-5-5-5v1.111A3.89 3.89 0 018.889 5zm.555 1.944a6.311 6.311 0 01-1.983-.316.558.558 0 00-.567.139L5.672 7.989a8.387 8.387 0 01-3.66-3.661l1.221-1.222a.558.558 0 00.14-.567A6.311 6.311 0 013.055.556.556.556 0 002.5 0H.556A.556.556 0 000 .556 9.444 9.444 0 009.444 10 .556.556 0 0010 9.444V7.5a.556.556 0 00-.556-.556z' fill='%235A7F98'/%3E%3C/svg%3E");
+  }
+  &.is-msg {
+    width: 10px;
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0H1a1 1 0 00-1 1v9l2-2h7a1 1 0 001-1V1a1 1 0 00-1-1zM2 3.5h6v1H2v-1zM6 6H2V5h4v1zm2-3H2V2h6' fill='%235A7F98'/%3E%3C/svg%3E");
+  }
+  &.is-close {
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 409.806 409.806'%3E%3Cpath d='M228.929 205.01L404.596 29.343c6.78-6.548 6.968-17.352.42-24.132-6.548-6.78-17.352-6.968-24.132-.42-.142.137-.282.277-.42.42L204.796 180.878 29.129 5.21c-6.78-6.548-17.584-6.36-24.132.42-6.388 6.614-6.388 17.099 0 23.713L180.664 205.01 4.997 380.677c-6.663 6.664-6.663 17.468 0 24.132 6.664 6.662 17.468 6.662 24.132 0l175.667-175.667 175.667 175.667c6.78 6.548 17.584 6.36 24.132-.42 6.387-6.614 6.387-17.099 0-23.712L228.929 205.01z'/%3E%3C/svg%3E");
+  }
+  &.is-menu {
+    width: 19px;
+    height: 19px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M492 236H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zM492 76H20C8.954 76 0 84.954 0 96s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zM492 396H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20z'/%3E%3C/svg%3E");
+  }
+  &.is-chevron-right {
+    width: 14px;
+    height: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M367.954 213.588L160.67 5.872c-7.804-7.819-20.467-7.831-28.284-.029-7.819 7.802-7.832 20.465-.03 28.284l207.299 207.731c7.798 7.798 7.798 20.486-.015 28.299L132.356 477.873c-7.802 7.819-7.789 20.482.03 28.284A19.935 19.935 0 00146.513 512c5.125 0 10.25-1.958 14.157-5.873l207.269-207.701c23.394-23.394 23.394-61.459.015-84.838z'/%3E%3C/svg%3E");
+  }
+}

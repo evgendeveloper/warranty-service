@@ -1,0 +1,63 @@
+.c-cards {
+  display: flex;
+
+  &>.c-card {
+    width: 160px;
+    flex-grow: 1;
+    flex-shrink: 0;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+
+a.c-card {
+  color: $color-black;
+}
+
+.c-card {
+  border-radius: $lg-border-radius;
+
+  &.is-outlined {
+    border: 1px solid $color-light-grey;
+  }
+
+  &.is-reservation {
+    background-color: $color-reservation;
+  }
+  &.is-partial {
+    background-color: $color-partial;
+  }
+  &.is-full {
+    background-color: $color-full;
+  }
+  &.is-free {
+    background-color: $color-free;
+  }
+  &.is-disabled {
+    color: $color-grey;
+    background-color: $color-disabled;
+
+    //* {
+    //  color: $color-grey;
+    //}
+  }
+
+
+  &.js-flat {
+    box-shadow: none;
+    transform: translateY(0);
+    transition: all .15s ease-in-out;
+
+    &:hover:not(.is-active) {
+      transform: translate3d(0, -2px, 0);
+      box-shadow: 0 1px 10px 2px rgba(black, .035);
+    }
+
+    &.is-active {
+      box-shadow: 0 0 0 2px $color-primary;
+    }
+  }
+
+}

@@ -1,0 +1,131 @@
+.e-radio {
+  display: inline-block;
+  position: relative;
+  user-select: none;
+
+  &__control {
+    display: inline-block;
+    vertical-align: middle;
+    border: 2px solid #dcdcdc;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    margin-right: 10px;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -3px;
+      margin-top: -3px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: $border-color-input;
+      transform: scale(.4);
+      opacity: 0;
+      transition: all .225s ease-in-out;
+    }
+  }
+  &__label {
+    color: $color-black;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 1px;
+  }
+
+  label {
+    display: flex;
+    align-items: flex-start;
+  }
+  input {
+    position: absolute;
+    pointer-events: none;
+    visibility: hidden;
+
+    &:checked + label {
+      .e-radio__control {
+        &::before {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    }
+
+    //&:focus + label {
+    //  background-color: $bg-color-input-fields;
+    //}
+  }
+}
+
+.e-radio-btn {
+  display: inline-block;
+  position: relative;
+  user-select: none;
+
+  label {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid $color-light-grey;
+    border-radius: $md-border-radius;
+    color: $color-black;
+    padding: 0 10px;
+    cursor: pointer;
+    min-height: 50px;
+
+    @include create-mq($grid__bp-sm, 'min') {
+      min-height: 70px;
+    }
+  }
+
+  input {
+    position: absolute;
+    pointer-events: none;
+    visibility: hidden;
+
+    &:checked + label {
+      background-color: $color-input-fields;
+      color: white;
+      border-color: $color-primary;
+    }
+  }
+}
+
+.e-radio-group {
+  $self: &;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__btn {
+    user-select: none;
+
+    label {
+      display: block;
+      padding: 10px 20px;
+      font-size: $font-size-controls;
+      cursor: pointer;
+      color: $color-primary;
+      background-color: $color-primary-light;
+      white-space: nowrap;
+    }
+
+    input {
+      position: absolute;
+      pointer-events: none;
+      visibility: hidden;
+
+      &:checked + label {
+        color: white;
+        background-color: $color-primary;
+      }
+    }
+  }
+}
