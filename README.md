@@ -7,8 +7,8 @@ Right before the ```</head>``` tag is the best option.
   (function(c,r,m,f,d,e,v){c[d]=c[d]||{},e=r.createElement(m),v=r.getElementsByTagName(m)[0],e.async=1,e.src=f,v.parentNode.insertBefore(e,v)})
   (window,document,'script','https://warranty-service.netlify.app/c4d-warranty-SDK.js','C4DWarranty');
   C4DWarranty.config = {
-    host: 'https://crm.gk-tis.ru', // URL to connect API
-    baseUrl: '/api/hs/extint/api',
+    host: 'https://crm.example.tld', // URL to connect API
+    baseUrl: '/api/v1',
     widget: {
       enabled: true,
       button: {
